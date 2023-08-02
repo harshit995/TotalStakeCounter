@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Card } from 'react-bootstrap';
 import axios from 'axios';
 import "../styles/Home.css"
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://total-stake.onrender.com"
 
 const Home = () => {
     const [chainName, setChainName] = useState('');

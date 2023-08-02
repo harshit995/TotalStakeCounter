@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import "../styles/Chain.css"
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://total-stake.onrender.com"
 
 const ChainDetail = () => {
     const { chainName } = useParams();
