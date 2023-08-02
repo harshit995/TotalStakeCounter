@@ -18,14 +18,7 @@ exports.getChain = async (req, res) => {
                     apikey: process.env.YOUR_API_KEY,
                 },
             });
-            console.log(response.data)
-            console.log("yeh nhi hoga...")
-            // const totalStake = response.data.data.amount || 0;
-            totalStake = response.data.data.info.bonded_nominators;
-            console.log("hiii")
-            console.log(response.data)
-            console.log("first..................")
-            // console.log(response.data.info.bonded_total)
+
             await Chain.findOneAndUpdate({ name: chainName }, { totalStake }, { upsert: true, new: true })
                 .then((updatedChain) => {
                     console.log("okk")
@@ -54,11 +47,7 @@ exports.getChain = async (req, res) => {
                     apikey: process.env.YOUR_API_KEY,
                 },
             });
-            console.log(response.data)
-            console.log("yeh nhi hoga...")
 
-            console.log("hiii")
-            console.log(response.data.data.info.bonded_nominators)
             totalStake = response.data.data.info.bonded_nominators;
             await Chain.findOneAndUpdate({ name: chainName }, { totalStake }, { upsert: true, new: true })
                 .then((updatedChain) => {
