@@ -6,4 +6,27 @@ Front-end: React.js\
 Back-end: Node.js, Express.js\
 Database: MongoDB
 
-# How to run on your local host
+### How to Setup
+
+### Env Variables
+
+Create a .env file in the server folder and add the following
+
+```
+PORT= 5000
+YOUR_API_KEY 
+stashP
+stashk
+Db_URL
+
+```
+
+### Install Dependencies after cloning the repo (frontend & backend)
+
+```
+cd server
+npm install
+cd client
+npm install
+```
+Start Contributing
