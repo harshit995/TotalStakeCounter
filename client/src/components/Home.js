@@ -43,7 +43,7 @@ const Home = () => {
         axios.post(`${BASE_URL}/chains`, { name: chainName })
             .then(() => {
                 setChainList([...chainList, { name: chainName }]);
-                setChainName('');
+                // setChainName('');
             })
             .catch((error) => {
                 console.error(error);
@@ -68,7 +68,7 @@ const Home = () => {
                     <h1 className='headings'>Search for a Chain</h1>
                 </div>
 
-                <Form onSubmit={handleSearch}>
+                <Form >
                     <Form.Group controlId="chainName">
                         <Form.Control
                             type="text"
@@ -78,7 +78,7 @@ const Home = () => {
                         />
                     </Form.Group>
                     <div className="text-center p-2">
-                        <Button variant="primary" type="submit" >
+                        <Button variant="primary" type="submit" onClick={handleSearch} >
                             Search
                         </Button>
                     </div>
@@ -110,7 +110,7 @@ const Home = () => {
             <div className="center-section ">
                 <div className='d-flex flex-column'>
                     <h1 className="mt-5 text-center headings">Add Chain</h1>
-                    <Form onSubmit={handleAddChain}>
+                    <Form >
                         <Form.Group controlId="newChainName">
                             <Form.Control
                                 type="text"
@@ -119,12 +119,12 @@ const Home = () => {
                                 onChange={(e) => setChainName(e.target.value)}
                             />
                         </Form.Group>
-                        <div className='text-center p-2'>
-                            <Button variant="success" type="submit" >
-                                Add Chain
-                            </Button>
-                        </div>
                     </Form>
+                    <div className='text-center p-2'>
+                        <Button variant="success" type="submit" onClick={handleAddChain}>
+                            Add Chain
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div >
