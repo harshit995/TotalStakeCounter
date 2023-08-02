@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Card } from 'react-bootstrap';
 import axios from 'axios';
 import "../styles/Home.css"
+const BASE_URL = "http://localhost:5000"
 
 const Home = () => {
     const [chainName, setChainName] = useState('');
@@ -17,7 +18,7 @@ const Home = () => {
 
     const fetchChainList = () => {
         // Replace YOUR_BACKEND_API_URL with the actual URL of your backend API
-        axios.get('/chains')
+        axios.get(`${BASE_URL}/chains`)
             .then((response) => {
                 setChainList(response.data);
             })
@@ -39,7 +40,7 @@ const Home = () => {
         }
 
         // Add the chainName to the chainList and save it to the backend
-        axios.post('/chains', { name: chainName })
+        axios.post(`${BASE_URL}/chains`, { name: chainName })
             .then(() => {
                 setChainList([...chainList, { name: chainName }]);
                 setChainName('');
@@ -51,7 +52,7 @@ const Home = () => {
 
     const handleDeleteChain = (chainName) => {
         // Delete the chainName from the chainList and remove it from the backend
-        axios.delete(`/chains/${chainName}`)
+        axios.delete(`${BASE_URL}/chains/${chainName}`)
             .then(() => {
                 setChainList(chainList.filter((chain) => chain.name !== chainName));
             })
