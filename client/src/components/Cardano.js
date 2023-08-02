@@ -6,42 +6,12 @@ import axios from 'axios';
 import "../styles/Chain.css"
 const BASE_URL = "http://localhost:5000"
 
-const ChainDetail = () => {
-    const { chainName } = useParams();
+const Cardano = () => {
+    const chainName = "cardano";
+
     const [totalStake, setTotalStake] = useState('');
     const [chainList, setChainList] = useState([]);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        fetchChainList();
-        fetchTotalStake();
-    }, []);
-
-    const fetchChainList = () => {
-
-        axios.get(`${BASE_URL}/chains`)
-            .then((response) => {
-                setChainList(response.data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    };
-
-    const fetchTotalStake = async () => {
-        if (`${chainName}` === "cardano") {
-            navigate("/chain/cardano")
-        } else {
-            await axios.get(`${BASE_URL}/chain/${chainName}`)
-                .then((response) => {
-                    setTotalStake(response.data.data.info.bonded_nominators);
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        }
-    };
-
     const handleAddChain = () => {
         // Check if the chainName already exists in the chainList
         if (chainList.find((chain) => chain.name === chainName)) {
@@ -71,20 +41,12 @@ const ChainDetail = () => {
                 console.error(error);
             });
     };
-
     return (
         <div className="conatiners ">
             <div className='card shadow cards'>
                 <h2 className='headings'>{chainName} Chain</h2>
                 <Card>
-                    <Card.Body>
-                        <Card.Title className='headings'>Total Stake</Card.Title>
-                        <Card.Title className='headings'>(with luganodes validator)</Card.Title>
-                        <Card.Text>
-                            <h3>{totalStake} {/* Display the total stake here */}</h3>
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+                    <iframe width="400" height="320" frameborder="0" src="https://img.cexplorer.io/w/widget.html?pool=pool1qvudfuw9ar47up5fugs53s2g84q3c4v86z4es6uwsfzzs89rwha&theme=dark"><a href="https://cexplorer.io/pool/pool1qvudfuw9ar47up5fugs53s2g84q3c4v86z4es6uwsfzzs89rwha"></a></iframe>                </Card>
 
                 {/* Add Chain Add and Delete buttons */}
                 <Button variant="success" className="my-3" onClick={handleAddChain}>
@@ -99,7 +61,7 @@ const ChainDetail = () => {
                 </Button>
             </div>
         </div >
-    );
-};
+    )
+}
 
-export default ChainDetail;
+export default Cardano

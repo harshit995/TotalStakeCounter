@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
-// const connectDB = require('./db/db.js');
+const connectDB = require('./db/db.js');
 const cors = require("cors");
 const router = require("./routes/userRoutes")
 const bodyParser = require('body-parser');
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.use(router);
 
-// connectDB();
+connectDB();
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
