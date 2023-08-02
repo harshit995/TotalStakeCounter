@@ -1,0 +1,16 @@
+.conatiners {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://images.cnbctv18.com/wp-content/uploads/2022/01/blockchain-1019x573.jpg?im=FitAndFill,width=1200,height=900') center/cover no-repeat;
+}
+
+.cards {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

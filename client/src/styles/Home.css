@@ -1,0 +1,30 @@
+.center-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 297px;
+
+}
+
+
+
+
+.containers {
+    color: white;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://fintech.global/wp-content/uploads/2023/07/Layer-1-blockchain-firm-Shardeum-nets-5.4m-in-strategic-funding-scaled.jpg');
+    /* Replace 'your-background-image.jpg' with the path to your actual image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+.chainlist {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+}

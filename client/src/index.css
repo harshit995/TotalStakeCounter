@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Animation for navbar text */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar-brand,
+.navbar-text {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+.headings {
+  font-size: 3rem;
+  color: #50f30d;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Specify a font family */
+  text-align: center;
+  /* Center the heading */
+  margin-bottom: 30px;
+  /* Add some space below the heading */
+  transform: perspective(500px) rotateX(20deg) scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.headings:hover {
+  transform: perspective(500px) rotateX(0deg) scale(1.2);
+}
