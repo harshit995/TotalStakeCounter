@@ -111,7 +111,7 @@ const Home = () => {
                 <div className='d-flex flex-column'>
                     <h1 className="mt-5 text-center headings">Add Chain</h1>
                     <Form >
-                        <Form.Group controlId="newChainName">
+                        <Form.Group controlId="newChainName" onSubmit={handleAddChain}>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter chain name (e.g., Polkadot, Cardano, Kusama)"
